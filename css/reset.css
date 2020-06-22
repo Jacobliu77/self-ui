@@ -59,7 +59,13 @@ hr {
 		border: none;
 		height: 1px;
 }
-
+/* 左右浮动 */
+.left {
+	float: left;
+}
+.right {
+	float: right;
+}
 /* 让非ie浏览器默认也显示垂直滚动条，防止因滚动条引起的闪烁 */
 html { overflow-y: scroll; }
 /*超出内容显示省略号*/

@@ -4,15 +4,17 @@
  * @Date: 2020-06-20 14:39:59
  * @LastEditTime: 2020-06-20 15:19:44
  * @LastEditors: jacob
---> 
+-->
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>常用样式库范例文件</title>
     <link rel="stylesheet" href="./css/reset.css">
     <link rel="stylesheet" href="./css/ui.css">
+    <script src="./js/juuery.js"></script>
     <style>
         body {
             /* background-color: rgb(170, 165, 165); */
@@ -21,8 +23,9 @@
         }
     </style>
 </head>
+
 <body>
-    
+
     <div id="container">
         <h1>容器类</h1>
         <hr>
@@ -41,18 +44,57 @@
         <div class="divider"></div>
         <!-- tab页容器 -->
         <div class="tabbox">
-            <div class="tab_header">
+            <div class="tab_header clearfix:after">
                 <ul>
-                    <li></li>
-                    <li></li>
-                    <li></li>
+                    <li class="left ">标签页a</li>
+                    <li class="left active">标签页b</li>
+                    <li class="left">标签页c</li>
                 </ul>
             </div>
-            <div class="tab_body">
-                
+            <div class="tab_body" style="height: 300px;">
+                <div class="tabcontainer "></div>
+                <div class="tabcontainer show"></div>
+                <div class="tabcontainer "></div>
             </div>
         </div>
     </div>
-   
+
+    <div id="formAndInput" style="margin-top: 30px;">
+        <input type="text" placeholder="请输入您要查询的内容" style="width: 200px;">
+
+        <!-- 选择框 -->
+        <div class="select select--white">
+            <span class="placeholder">请选择</span>
+            <ul>
+                <li>百度</li>
+                <li>谷歌</li>
+                <li>雅虎</li>
+                <li>新浪</li>
+            </ul>
+        </div>
+    </div>
+    <script src="./js/ui.js"></script>
+    <!-- <script>
+        // 选择框的js部分
+        $('.select').on('click', '.placeholder', function (e) {
+            var parent = $(this).closest('.select');
+            if (!parent.hasClass('is-open')) {
+                parent.addClass('is-open');
+                $('.select.is-open').not(parent).removeClass('is-open');
+            } else {
+                parent.removeClass('is-open');
+            }
+            e.stopPropagation();
+        }).on('click', 'ul>li', function () {
+            var parent = $(this).closest('.select');
+            parent.removeClass('is-open').find('.placeholder').text($(this).text());
+        });
+
+        $('body').on('click', function () {
+            $('.select.is-open').removeClass('is-open');
+        });
+        //选择框的js结束
+    </script> -->
 </body>
+
 </html>
